@@ -1,10 +1,13 @@
 // import { Error, Loader, Songcard } from "../components";
 import { genres } from "../assets/constants";
 import { SongCard } from "../components";
+import { useGetTopChartsQuery } from "../redux/services/shazamCore";
 
 const Discover = () => {
+  const { data, isFetching, error } = useGetTopChartsQuery();
   console.log(genres);
   const genreTitle = "Pop";
+  console.log(data);
 
   return (
     <div className="flex flex-col">
